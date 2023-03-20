@@ -66,10 +66,10 @@ def delete_patient(request, pk):
     template = 'index.html'
     Patients.objects.filter(id=pk).delete()
 
-    items = Patients.objects.all()
+    patients = Patients.objects.all()
 
     context = {
-        'items': items,
+        'patients': patients,
     }
 
     return render(request, template, context)

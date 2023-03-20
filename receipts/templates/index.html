@@ -294,6 +294,7 @@
                         <th scope="col">Amount Paid</th>
                         <th scope="col">Date Of Payment</th>
                         <th scope="col">Date Due</th>
+                        <th scope="col">Remove</th>
 
                       </tr>
                     </thead>
@@ -308,7 +309,10 @@
                         <td><a href="#" class="text-primary">{{ patients.amount_paid }}</a></td>
                         <td>{{ patients.date_of_payment }}</td>
                         <td>{{ patients.date_due_payment }}</td>
-
+                        <td><a href="{% url 'delete-patient/(?P<pk>\d+)' patients.pk%}" class="btn btn-danger btn-sm"
+                           role="button" aria-pressed="true">
+                          Delete</a>
+                        </td>
 
                       </tr>
                           {% endfor %}
